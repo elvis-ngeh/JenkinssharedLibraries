@@ -1,11 +1,11 @@
-def call (String  stagename){
-    if ("${stagename}" == "Build"){
-sh "mvn clean package"
-    }        
- else if ("${stagename}" == "SonarqubeReport"){
-sh " mvn sonar:sonar"
- }
-    else if ("${stagename}" == "Upload to Nexus"){
-sh "mvn deploy"
-}
+def call(String   stageName){
+    if ("${stageName}" == "Build"){
+        sh"mvn clean package"
+    }
+    else if ("${stageName}" == "SonarReport"){
+        sh"mvn sonar:sonar"
+    }
+    else if ("${stageName}" == "Upload2Nexus"){
+        sh "mvn deploy"
+    }   
 }
